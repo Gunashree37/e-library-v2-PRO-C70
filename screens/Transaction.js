@@ -2,18 +2,14 @@ import React, { Component } from "react";
 import {
   View,
   StyleSheet,
-  TextInput,
+ 
   TouchableOpacity,
   Text,
-  ImageBackground,
-  Image
+  
 } from "react-native";
 import * as Permissions from "expo-permissions";
 import { BarCodeScanner } from "expo-barcode-scanner";
 
-const bgImage = require("../assets/background2.png");
-const appIcon = require("../assets/appIcon.png");
-const appName = require("../assets/appName.png");
 
 export default class TransactionScreen extends Component {
   constructor(props) {
@@ -43,19 +39,7 @@ export default class TransactionScreen extends Component {
   handleBarCodeScanned = async ({ type, data }) => {
     const { domState } = this.state;
 
-    if (domState === "bookId") {
-      this.setState({
-        bookId: data,
-        domState: "normal",
-        scanned: true
-      });
-    } else if (domState === "studentId") {
-      this.setState({
-        studentId: data,
-        domState: "normal",
-        scanned: true
-      });
-    }
+   
   };
 
   render() {
@@ -76,34 +60,19 @@ export default class TransactionScreen extends Component {
             <Image source={appName} style={styles.appName} />
           </View>
           <View style={styles.lowerContainer}>
-            <View style={styles.textinputContainer}>
-              <TextInput
-                style={styles.textinput}
-                placeholder={"Book Id"}
-                placeholderTextColor={"#FFFFFF"}
-                value={bookId}
-              />
-              <TouchableOpacity
-                style={styles.scanbutton}
-                onPress={() => this.getCameraPermissions("bookId")}
-              >
-                <Text style={styles.scanbuttonText}>Scan</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={[styles.textinputContainer, { marginTop: 25 }]}>
-              <TextInput
-                style={styles.textinput}
-                placeholder={"Student Id"}
-                placeholderTextColor={"#FFFFFF"}
-                value={studentId}
-              />
-              <TouchableOpacity
-                style={styles.scanbutton}
-                onPress={() => this.getCameraPermissions("studentId")}
-              >
-                <Text style={styles.scanbuttonText}>Scan</Text>
-              </TouchableOpacity>
-            </View>
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
           </View>
         </ImageBackground>
       </View>
